@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Game>
+@{
+    ViewData["Title"] = "Games";
+}
+<partial name="_alerts" />
+<a class="btn btn-secondary btn-lg mt-5" asp-action="Create">
+    <i class="bi bi-plus-circle"></i>
+    Add game
+</a>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning mt-5">
+        <h4 class="alert-heading">No games!</h4>
+        <p class="mb-0">No games were added yet.</p>
+    </div>
+}
+else
+{
+    <div class="mt-5">
+        <table class="table table-bordered border-primary border-3">
+            <tbody>
+                @foreach (var game in Model)
+                {
+                    <tr class="border-1 border-success">
+                        <td>
+                            <div class="d-flex">
+                                <div class="pe-4">
+                                    <img src="/@game.Cover" style="max-width:90px"/>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center align-content-center">
+                                    <h4>@game.Name</h4>
+                                    <h5>@game.Category.Name</h5>
+                                </div>
+							</div>
+						</td>
+                        <td class="align-middle">
+                            <div class="d-flex justify-content-end">
+                                <a asp-action="Edit" asp-route-id="@game.Id" asp-controller="Games" class="btn btn-info rounded rounded-3 me-3">
+									<i class="bi bi-pencil-fill"></i>
+                                </a>
+                                <a href="javascript:;" class="btn btn-danger rounded rounded-3 deleted-alert" data-id="@game.Id">
+                                    <i class="bi bi-trash3"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@section Scripts {
+	<script src="~/js/delete-alert.js" asp-append-version="true"></script>
+
+}
