@@ -1,6 +1,6 @@
 # GameZone Project
 
-**GameZone** is a CRUD (Create, Read, Update, Delete) application that I developed as part of a learning project. This project was inspired by a YouTube tutorial, which can be found [here](INSERT_YOUTUBE_LINK_HERE).
+**GameZone** is a CRUD (Create, Read, Update, Delete) application that I developed as part of a learning project. This project was inspired by a YouTube tutorial, which can be found [here](https://www.youtube.com/playlist?list=PL62tSREI9C-cQ21T5HIWqqBOHQiNMOhBG).
 
 ## Features:
 - **Create**: Users can add new games to the system.
